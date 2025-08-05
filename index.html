@@ -16,55 +16,126 @@
         .container {
             max-width: 700px;
             margin: 60px auto;
-            background: rgba(255,255,255,0.05);
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-            padding: 40px 30px;
+            background: rgba(255,255,255,0.07);
+            border-radius: 20px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+            padding: 48px 36px;
             text-align: center;
         }
         h1 {
-            font-size: 2.8em;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+            font-size: 3em;
+            margin-bottom: 14px;
+            letter-spacing: 2.5px;
+            background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
+            font-size: 1.25em;
+            margin-bottom: 32px;
+            color: #e0eafc;
         }
         .cta-btn {
-            background: #00c6ff;
             background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
             color: #fff;
             border: none;
-            border-radius: 8px;
-            padding: 16px 40px;
-            font-size: 1.1em;
+            border-radius: 10px;
+            padding: 18px 44px;
+            font-size: 1.15em;
             font-weight: bold;
             cursor: pointer;
-            transition: background 0.3s;
-            box-shadow: 0 4px 16px rgba(0,198,255,0.2);
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 6px 20px rgba(0,198,255,0.25);
         }
         .cta-btn:hover {
             background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+            transform: scale(1.05);
         }
         .features {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 24px;
-            margin-top: 40px;
+            gap: 28px;
+            margin-top: 44px;
         }
         .feature {
-            background: rgba(255,255,255,0.08);
-            border-radius: 10px;
-            padding: 20px;
-            width: 200px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            background: rgba(255,255,255,0.10);
+            border-radius: 12px;
+            padding: 24px;
+            width: 220px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .feature:hover {
+            transform: translateY(-6px) scale(1.04);
+            box-shadow: 0 8px 32px rgba(0,198,255,0.18);
         }
         .feature h3 {
             margin-top: 0;
-            font-size: 1.15em;
-            margin-bottom: 8px;
+            font-size: 1.22em;
+            margin-bottom: 10px;
+            color: #00c6ff;
+        }
+        .feature p {
+            color: #e0eafc;
+        }
+        /* Signup Section */
+        #signup {
+            margin-top: 60px;
+            background: rgba(255,255,255,0.09);
+            border-radius: 16px;
+            padding: 36px 28px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #signup h2 {
+            margin-top: 0;
+            font-size: 2em;
+            margin-bottom: 18px;
+            color: #00c6ff;
+        }
+        #signup form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        #signup input, #signup button {
+            padding: 14px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1em;
+        }
+        #signup input {
+            background: #f4f8fb;
+            color: #222;
+        }
+        #signup button {
+            background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        #signup button:hover {
+            background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+            transform: scale(1.04);
+        }
+        @media (max-width: 800px) {
+            .container {
+                padding: 28px 10px;
+            }
+            .features {
+                flex-direction: column;
+                gap: 18px;
+            }
+            .feature {
+                width: 100%;
+            }
+            #signup {
+                padding: 24px 8px;
+            }
         }
     </style>
 </head>
@@ -72,7 +143,7 @@
     <div class="container">
         <h1>Fintech Fundamentals</h1>
         <p>Unlock the future of finance! Join our cool fintech class and learn how technology is transforming banking, payments, investing, and more.</p>
-        <button class="cta-btn" onclick="window.location.href='#signup'">Enroll Now</button>
+        <button class="cta-btn" onclick="document.getElementById('signup').scrollIntoView({behavior: 'smooth'})">Enroll Now</button>
         <div class="features">
             <div class="feature">
                 <h3>Real-World Projects</h3>
@@ -88,5 +159,13 @@
             </div>
         </div>
     </div>
+    <section id="signup">
+        <h2>Sign Up for Updates</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <button type="submit">Get Started</button>
+        </form>
+    </section>
 </body>
 </html>
